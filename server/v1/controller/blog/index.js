@@ -3,7 +3,8 @@
 const router = require("express").Router();
 const controller = require("./controller");
 
-router.get("/view", controller.viewBlogs);
-router.get("/view/:category", controller.viewBlogsByCategory);
-
+router.get("/", controller.viewBlogs);
+router.get("/:category", controller.viewBlogsByCategory);
+router.post("/", controller.addBlog);
+router.get("/admin/:id", controller.viewMyBlog);
 module.exports = router;
